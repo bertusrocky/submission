@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+        <div class="row mt-3">
+                <div class="mx-auto">
+                     <img src="{{url_for('static', filename='images/logo1.png')}}" />
+                </div>
+            </div>
+        <div class="row align-items-center">
+            <div class="col-md-4 mx-auto">
+    
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ messages[0] }}
+                    </div>
+                {% endif %}
+                {% endwith %}
+    
+                <div class="card bg-light mt-4 custom">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Login</h3>
+                        <form method="POST" action="/login">
+
+                            <div class="form-group">
+                                <label>Student Number</label>
+                                <input type="text" class="form-control" name="student_number" placeholder="Enter Student Number" maxlength="8">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                            </div>
+
+                            <button type="submit" class="btn btn-lg btn-block btn-custom text-white mt-2"><i class="fas fa-unlock fa-sm"></i> Login</button>
+
+                            <p class="text-center pt-3"><a href="{{ url_for('auth.signup') }}">Not registered?</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

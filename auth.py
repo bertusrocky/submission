@@ -24,7 +24,7 @@ def login_post():
 
   login_user(user)
 
-  return redirect(url_for('main.booking'))
+  return redirect(url_for('main.request'))
 
 
 @auth.route('/signup')

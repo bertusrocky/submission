@@ -6,6 +6,11 @@
   background-color: #c32d45;
 }
 
+footer{
+  background-color: #c32d45;
+  height:50px;
+}
+
 .custom-logout a{
   text-decoration: none;
   color:white;
